@@ -84,26 +84,19 @@ different from `false` (which is the default).
 
 Installation is easiest using LuaRocks:
 
-    luarocks install lua-resty-aws
+    luarocks install api7-lua-resty-aws
 
 To install from the git repo:
 
-    git clone https://github.com/Kong/lua-resty-aws.git
+    git clone https://github.com/api7/lua-resty-aws.git
     cd lua-resty-aws
     make install
-
-### Troubleshooting
-
-MacOS has a known issue that the libexpat header file 'expat_config.h' is missing. If you run into that issue, install libexpat manually (eg. `brew install expat`). And then include the libexpat location when installing;
-        luarocks install lua-resty-aws EXPAT_DIR=/path/to/expat
-
-Details: https://github.com/lunarmodules/luaexpat/issues/32
 
 ---
 
 ## Development
 
-To update the SDK version being used edit the version tag in [`update_api_files.sh`](https://github.com/Kong/lua-resty-aws/blob/main/update_api_files.sh)
+To update the SDK version being used edit the version tag in [`update_api_files.sh`](https://github.com/api7/lua-resty-aws/blob/main/update_api_files.sh)
 and then run:
 
     make dev
@@ -156,7 +149,36 @@ Author: Thijs Schreijer
 
 License: [Apache 2.0](https://github.com/Kong/lua-resty-aws/blob/main/LICENSE)
 
+## Copyright and license (Modified parts from upstream)
+
+Copyright: (c) 2024 API7.ai.
+
+Author: Zeping Bai [@bzp2010](https://github.com/bzp2010)
+
+License: [Apache 2.0](https://github.com/api7/lua-resty-aws/blob/main/LICENSE)
+
 ---
+
+## API7 Fork History
+
+Versioning is strictly based on [Semantic Versioning](https://semver.org/), version from 2.0.0.
+
+We may refactor parts of the codebase or add new features, and some of the upstream changes will be synchronized to the fork.
+
+We set up an automated release workflow:
+
+1. Modify the .version file
+1. Modify changelog
+1. Submit a PR with the name `feat: release vX.Y.Z`
+1. Merge PR with the commit name `feat: release vX.Y.Z`
+
+### 2.0.0 (09-Aug-2024)
+
+- feat: remove XML dependency to simplify installation
+  [1](https://github.com/api7/lua-resty-aws/pull/1)
+
+- ci: add an automated release workflow
+  [2](https://github.com/api7/lua-resty-aws/pull/2)
 
 ## History
 
