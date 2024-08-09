@@ -38,11 +38,11 @@ $(target_rock):
 	cd /tmp/random_dir_2cs4f0tghRT/lua-resty-aws; if [ ! "${VERSION}" = "dev" ]; then git checkout ${VERSION}; fi
 	cd /tmp/random_dir_2cs4f0tghRT/lua-resty-aws; make dev
 	cd /tmp/random_dir_2cs4f0tghRT; zip -r lua-resty-aws-${VERSION}-1.src.rock lua-resty-aws
-	cd /tmp/random_dir_2cs4f0tghRT; cat lua-resty-aws/lua-resty-aws-dev-1.rockspec | sed "s/package_version = \"dev\"/package_version = \"${VERSION}\"/" > lua-resty-aws-${VERSION}-1.rockspec
-	cd /tmp/random_dir_2cs4f0tghRT; zip -r lua-resty-aws-${VERSION}-1.src.rock lua-resty-aws-${VERSION}-1.rockspec
+	cd /tmp/random_dir_2cs4f0tghRT; cat lua-resty-aws/api7-lua-resty-aws-dev-1.rockspec | sed "s/package_version = \"dev\"/package_version = \"${VERSION}\"/" > api7-lua-resty-aws-${VERSION}-1.rockspec
+	cd /tmp/random_dir_2cs4f0tghRT; zip -r lua-resty-aws-${VERSION}-1.src.rock api7-lua-resty-aws-${VERSION}-1.rockspec
 	mv /tmp/random_dir_2cs4f0tghRT/lua-resty-aws-${VERSION}-1.src.rock ./api7-lua-resty-aws-${VERSION}-1.src.rock
 	-@rm api7-lua-resty-aws-${VERSION}-1.rockspec
-	mv /tmp/random_dir_2cs4f0tghRT/lua-resty-aws-${VERSION}-1.rockspec ./api7-lua-resty-aws-${VERSION}-1.rockspec
+	mv /tmp/random_dir_2cs4f0tghRT/api7-lua-resty-aws-${VERSION}-1.rockspec ./api7-lua-resty-aws-${VERSION}-1.rockspec
 
 
 pack: $(target_rock)
