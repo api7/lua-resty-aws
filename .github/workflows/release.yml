@@ -22,8 +22,10 @@ jobs:
       - name: Extract release name
         id: release_env
         shell: bash
+        env:
+          MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-          title="${{ github.event.head_commit.message }}"
+          title="${MESSAGE}"
           re="^feat: release v*(\S+)"
           if [[ $title =~ $re ]]; then
               v=v${BASH_REMATCH[1]}
