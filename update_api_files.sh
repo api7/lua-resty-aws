@@ -90,7 +90,7 @@ done
 
 # update the rockspec
 echo "writing rockspec file"
-rockspec=lua-resty-aws-dev-1.rockspec
+rockspec=api7-lua-resty-aws-dev-1.rockspec
 if [ -f $rockspec ]; then
   rm $rockspec
 fi
