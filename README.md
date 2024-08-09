@@ -149,7 +149,7 @@ Author: Thijs Schreijer
 
 License: [Apache 2.0](https://github.com/Kong/lua-resty-aws/blob/main/LICENSE)
 
-## Copyright and license (Modified parts from upstream)
+## Copyright and license (Modified parts)
 
 Copyright: (c) 2024 API7.ai.
 
