@@ -34,7 +34,7 @@ $(target_rock):
 	[ -n "$$VERSION" ] || { echo VERSION not set; exit 1; }
 	-@rm -rf /tmp/random_dir_2cs4f0tghRT
 	mkdir /tmp/random_dir_2cs4f0tghRT
-	cd /tmp/random_dir_2cs4f0tghRT; git clone https://github.com/bzp2010/lua-resty-aws.git
+	cd /tmp/random_dir_2cs4f0tghRT; git clone https://github.com/api7/lua-resty-aws.git
 	cd /tmp/random_dir_2cs4f0tghRT/lua-resty-aws; if [ ! "${VERSION}" = "dev" ]; then git checkout ${VERSION}; fi
 	cd /tmp/random_dir_2cs4f0tghRT/lua-resty-aws; make dev
 	cd /tmp/random_dir_2cs4f0tghRT; zip -r lua-resty-aws-${VERSION}-1.src.rock lua-resty-aws
