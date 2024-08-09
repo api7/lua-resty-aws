@@ -7,8 +7,8 @@ LR_API_KEY=$2
 #LR_API_KEY=INfSIgkuArccxH9zq9M7enqackTiYtgRM6c9l6Y4
 
 
-ROCK_FILE=lua-resty-aws-$ROCK_VERSION.src.rock
-ROCKSPEC_FILE=lua-resty-aws-$ROCK_VERSION.rockspec
+ROCK_FILE=api7-lua-resty-aws-$ROCK_VERSION.src.rock
+ROCKSPEC_FILE=api7-lua-resty-aws-$ROCK_VERSION.rockspec
 
 if [ "$ROCK_VERSION" == "-1" ]; then
   echo "First argument (version) is missing."
