@@ -43,7 +43,6 @@ jobs:
     - name: Install Busted
       run: |
         /usr/local/openresty/luajit/bin/luarocks install busted
-        /usr/local/openresty/luajit/bin/luarocks install luatz
         /usr/local/openresty/luajit/bin/luarocks install luasocket
 
     - uses: actions/checkout@v2
