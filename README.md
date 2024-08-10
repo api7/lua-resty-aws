@@ -172,6 +172,11 @@ We set up an automated release workflow:
 1. Submit a PR with the name `feat: release vX.Y.Z`
 1. Merge PR with the commit name `feat: release vX.Y.Z`
 
+### 2.0.1 (10-Aug-2024)
+
+- fix: add luatz as dependency
+  [5](https://github.com/api7/lua-resty-aws/pull/5)
+
 ### 2.0.0 (09-Aug-2024)
 
 - feat: remove XML dependency to simplify installation
