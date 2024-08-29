@@ -106,7 +106,7 @@ local function build_request(operation, config, params)
   local body_tbl = {}
 
   if config.signingName or config.targetPrefix then
-    request.headers["X-Amz-Target"] = (config.signingName or config.targetPrefix) .. "." .. operation.name
+    request.headers["X-Amz-Target"] = (config.targetPrefix or config.signingName) .. "." .. operation.name
   end
   if config.protocol == "query" then
     request.query["Action"] = operation.name
