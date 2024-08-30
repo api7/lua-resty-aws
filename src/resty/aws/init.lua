@@ -78,6 +78,66 @@ local aws_config = {
   api = {},
 }
 
+local detect_toxic_content_spec = {
+  name = "DetectToxicContent",
+  http = {
+    method = "POST",
+    requestUri = "/"
+  },
+  input = {
+    type = "structure",
+    members = {
+      LanguageCode = {
+        shape = "LanguageCode"
+      },
+      TextSegments = {
+        member = {
+          Text = {
+            shape = "CustomerInputString"
+          }
+        },
+        type = "list"
+      }
+    },
+    required = {
+      "TextSegments",
+      "LanguageCode"
+    },
+  },
+  output = {
+    type = "structure",
+    members = {
+      ResultList = {
+        member = {
+          Labels = {
+            shape = "ListOfLabels"
+          },
+          Toxicity = {
+            shape = "Float"
+          }
+        },
+        type = "list"
+      }
+    },
+    sensitive = true,
+  },
+  errors = {
+    {
+      shape = "InvalidRequestException"
+    },
+    {
+      shape = "TextSizeLimitExceededException"
+    },
+    {
+      shape = "UnsupportedLanguageException"
+    },
+    {
+      shape = "InternalServerException"
+    }
+  },
+}
+
+
 local load_api
 do
   -- The API table is a map, where the index is the service-name. The value is a table.
@@ -119,6 +179,9 @@ do
     end
 
     api = require(module_name)
+    if module_name == "resty.aws.raw-api.comprehend-2017-11-27" or module_name == "resty.aws.raw-api.comprehend-latest" then
+      api.operations["DetectToxicContent"] = detect_toxic_content_spec
+    end
     dereference_service(api)
 
     cache[module_name] = api
